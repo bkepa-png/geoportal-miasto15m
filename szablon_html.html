@@ -1,0 +1,19 @@
+<div style="font-family: Times New Roman, sans-serif; width: 320px;">
+  <h3 style="margin: 0 0 10px 0; font-size: 18px;">Dostępność 15-minutowa</h3>
+  <p style="margin: 5px 0;">Wskaźnik: <b>[% "index_15m" %]%</b></p>
+  
+  <div style="width: 100%; background-color: #e0e0e0; border-radius: 4px; margin-bottom: 10px;">
+    <div style="height: 10px; border-radius: 4px; width: [% "index_15m" %]%; background-color: [% case when "index_15m" <= 20 then '#d7191c' when "index_15m" <= 40 then '#fdae61' when "index_15m" <= 60 then '#ffffbf' when "index_15m" <= 80 then '#a6d96a' else '#1a9641' end %];"></div>
+  </div>
+  
+  <p style="margin: 5px 0; font-size: 12px;">Suma punktów POI w komórce: [% "cnt_edukac" + "cnt_zdrowi" + "cnt_handel" + "cnt_zielen" + "cnt_transp" %]</p>
+
+  
+  <div style="display: flex; gap: 8px; font-size: 10px; font-weight: bold; text-align: center;">
+    <span style="flex: 1; padding: 4px 2px; border-radius: 16px; color: white; background-color: [% if("cnt_zdrowi" > 0, '#E53935', '#BDBDBD') %];">Zdrowie</span>
+    <span style="flex: 1; padding: 4px 2px; border-radius: 16px; color: white; background-color: [% if("cnt_edukac" > 0, '#2196F3', '#BDBDBD') %];">Edukacja</span>
+    <span style="flex: 1; padding: 4px 2px; border-radius: 16px; color: white; background-color: [% if("cnt_handel" > 0, '#9C27B0', '#BDBDBD') %];">Handel</span>
+    <span style="flex: 1; padding: 4px 2px; border-radius: 16px; color: white; background-color: [% if("cnt_zielen" > 0, '#2E7D32', '#BDBDBD') %];">Zieleń</span>
+    <span style="flex: 1; padding: 4px 2px; border-radius: 16px; color: white; background-color: [% if("cnt_transp" > 0, '#795548', '#BDBDBD') %];">Transport</span>
+  </div>
+</div>
